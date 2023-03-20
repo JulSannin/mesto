@@ -1,0 +1,13 @@
+.popup__form {
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+@media screen and (min-width: 319px) and (max-width: 767px) {
+    .popup__form {
+        height: 322px;
+    }
+}

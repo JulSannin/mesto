@@ -1,0 +1,8 @@
+.elements__text-and-like {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    max-width: 246px;
+    padding: 0 0 28px 21px;
+}

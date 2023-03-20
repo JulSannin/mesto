@@ -1,0 +1,25 @@
+.popup__button-saved {
+    cursor: pointer;
+    padding: 0;
+    border: 0;
+    margin-top: 48px;
+    background-image: url("../../../images/__saved-button.svg");
+    background-color: rgba(255, 0, 0, 0);
+    width: 358px;
+    height: 50px;
+    transition: 0.5s;
+}
+
+.popup__button-saved:hover {
+    opacity: 0.6;
+    transition: 0.25s;
+}
+
+@media screen and (min-width: 319px) and (max-width: 767px) {
+    .popup__button-saved {
+        margin-top: 45px;
+        background-image: url("../../../images/__saved-button-mobile.svg");
+        width: 238px;
+        height: 46px;
+    }
+}

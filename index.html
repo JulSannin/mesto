@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Mesto</title>
+</head>
+
+<body>
+    <div class="page">
+        <header class="header">
+            <img class="header__logo" src="./images/__logo.svg" title="Логотип" alt="Логотип">
+        </header>
+        <main class="content">
+            <section class="profile">
+                <img class="profile__avatar" src="./images/__avatar.png" title="Фото профиля" alt="Фото профиля">
+                <div class="profile__info">
+                    <div class="profile__description">
+                        <p class="profile__author">Жак-Ив Кусто</p>
+                        <p class="profile__competention">Исследователь океана</p>
+                    </div>
+                    <button class="profile__edit-button" type="button"></button>
+                </div>
+                <button class="profile__add-button" type="button"></button>
+            </section>
+            <section class="elements">
+                <div class="elements__item">
+                    <img class="elements__photo" src="./images/__img1.png" title="Фото" alt="Фото">
+                    <div class="elements__text-and-like">
+                        <p class="elements__place-name">Карачаевск</p>
+                        <button class="elements__like-button" type="button"></button>
+                    </div>
+                </div>
+                <div class="elements__item">
+                    <img class="elements__photo" src="./images/__img2.png" title="Фото" alt="Фото">
+                    <div class="elements__text-and-like">
+                        <p class="elements__place-name">Гора Эльбрус</p>
+                        <button class="elements__like-button" type="button"></button>
+                    </div>
+                </div>
+                <div class="elements__item">
+                    <img class="elements__photo" src="./images/__img3.png" title="Фото" alt="Фото">
+                    <div class="elements__text-and-like">
+                        <p class="elements__place-name">Домбай</p>
+                        <button class="elements__like-button" type="button"></button>
+                    </div>
+                </div>
+                <div class="elements__item">
+                    <img class="elements__photo" src="./images/__img3.png" title="Фото" alt="Фото">
+                    <div class="elements__text-and-like">
+                        <p class="elements__place-name">Гора Эльбрус</p>
+                        <button class="elements__like-button" type="button"></button>
+                    </div>
+                </div>
+                <div class="elements__item">
+                    <img class="elements__photo" src="./images/__img2.png" title="Фото" alt="Фото">
+                    <div class="elements__text-and-like">
+                        <p class="elements__place-name">Домбай</p>
+                        <button class="elements__like-button" type="button"></button>
+                    </div>
+                </div>
+                <div class="elements__item">
+                    <img class="elements__photo" src="./images/__img1.png" title="Фото" alt="Фото">
+                    <div class="elements__text-and-like">
+                        <p class="elements__place-name">Карачаево-Черкесия</p>
+                        <button class="elements__like-button" type="button"></button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__text">© 2020 Mesto Russia</p>
+        </footer>
+        <div class="overlay"></div>
+        <section class="popup popup">
+            <button class="popup__button-closed" type="button"></button>
+            <form class="popup__form" action="#" method="post" target="_blank">
+                <h2 class="popup__form-text">Редактировать профиль</h2>
+                <input class="popup__form-name" type="text" name="name" value="" required>
+                <input class="popup__form-description" type="text" name="description" value="" required>
+                <button class="popup__button-saved" type="button"></button>
+            </form>
+        </section>
+    </div>
+</body>
+
+</html>
