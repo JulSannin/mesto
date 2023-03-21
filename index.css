@@ -24,6 +24,7 @@
 @import url("./blocks/elements/__text-and-like/elements__text-and-like.css");
 @import url("./blocks/elements/__place-name/elements__place-name.css");
 @import url("./blocks/elements/__like-button/elements__like-button.css");
+@import url("./blocks/elements/__like-button/_active/elements__like-button_active.css");
 
 @import url("./blocks/footer/footer.css");
 @import url("./blocks/footer/__text/footer__text.css");
