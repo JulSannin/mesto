@@ -1,4 +1,4 @@
-.popup__form_description {
+.popup__form-description {
     width: 358px;
     margin-top: 26px;
     border: 0;
@@ -12,7 +12,7 @@
 }
 
 @media screen and (min-width: 319px) and (max-width: 767px) {
-    .popup__form_description {
+    .popup__form-description {
         width: 238px;
     }
 }

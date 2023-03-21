@@ -1,4 +1,4 @@
-.popup__form_name {
+.popup__form-name {
     width: 358px;
     margin-top: 44px;
     padding: 0 0 13px 0;
@@ -12,7 +12,7 @@
 }
 
 @media screen and (min-width: 319px) and (max-width: 767px) {
-    .popup__form_name {
+    .popup__form-name {
         margin-top: 71px;
         width: 238px;
     }
