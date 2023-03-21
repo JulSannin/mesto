@@ -3,8 +3,16 @@
     padding: 0;
     border: 0;
     margin-top: 48px;
-    background-image: url("../../../images/__saved-button.svg");
-    background-color: rgba(255, 0, 0, 0);
+    margin-bottom: 36px;
+    background-color: #000;
+    text-align: center;
+    color: #fff;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    border-radius: 2px;
     width: 358px;
     height: 50px;
     transition: 0.5s;
@@ -15,10 +23,17 @@
     transition: 0.25s;
 }
 
+.popup__button-saved:active {
+    opacity: 1;
+    transition: 0.25s;
+}
+
 @media screen and (min-width: 319px) and (max-width: 767px) {
     .popup__button-saved {
         margin-top: 45px;
-        background-image: url("../../../images/__saved-button-mobile.svg");
+        margin-bottom: 25px;
+        font-size: 14px;
+        line-height: 17px;
         width: 238px;
         height: 46px;
     }

@@ -1,32 +1,10 @@
-@keyframes NoneToBlock {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
 .popup_opened {
     display: block;
-    width: 430px;
-    height: 330px;
     position: fixed;
-    background: #fff;
-    border-radius: 10px;
+    top: 0;
     left: 0;
-    right: 0;
-    top: 195px;
-    margin: 0 auto;
-    z-index: 3;
-    animation: NoneToBlock 1s ease-in-out;
-}
-
-@media screen and (min-width: 319px) and (max-width: 767px) {
-    .popup_opened {
-        width: 282px;
-        height: 322px;
-        top: 122px;
-    }
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
 }

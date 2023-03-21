@@ -1,9 +1,8 @@
 .popup__form-text {
-    padding-top: 34px;
-    padding-left: 36px;
+    padding-top: 36px;
     margin: 0;
     width: 330px;
-    align-self: flex-start;
+    padding-right: 30px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 900;
@@ -13,8 +12,8 @@
 
 @media screen and (min-width: 319px) and (max-width: 767px) {
     .popup__form-text {
+        padding-right: 0;
         padding-top: 25px;
-        padding-left: 0;
         margin: 0 auto;
         width: 238px;
         font-size: 18px;

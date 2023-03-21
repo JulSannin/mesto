@@ -1,9 +1,12 @@
 .profile__edit-button {
     cursor: pointer;
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0);
     background-image: url("../../../images/__edit-button.svg");
+    background-repeat: no-repeat;
+    background-position: center;
     padding: 0;
     border: 0;
+    border: 1px solid #fff;
     width: 24px;
     height: 24px;
     margin: 0 0 24px 18px;
@@ -18,7 +21,7 @@
 @media screen and (min-width: 319px) and (max-width: 767px) {
     .profile__edit-button {
         background-image: url("../../../images/__edit-button-mobile.svg");
-        margin: 0 0 28px 10px;
+        margin: 0 0 24px 10px;
         width: 18px;
         height: 18px;
     }

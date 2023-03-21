@@ -1,7 +1,6 @@
 .header {
     max-width: 880px;
-    height: 73px;
-    border-bottom: 1px solid #545454;
+    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
     margin: 0 auto;
     padding-top: 45px;
 }
@@ -9,7 +8,6 @@
 @media screen and (min-width: 319px) and (max-width: 767px) {
     .header {
         max-width: 720px;
-        max-height: 56px;
-        padding-top: 28px;
+        padding-top: 22px;
     }
 }
