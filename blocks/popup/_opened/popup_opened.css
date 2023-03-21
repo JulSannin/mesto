@@ -10,7 +10,6 @@
 
 .popup_opened {
     display: block;
-    position: relative;
     width: 430px;
     height: 330px;
     position: fixed;
