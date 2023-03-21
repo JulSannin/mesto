@@ -44,6 +44,8 @@ function handleFormSubmit(evt) {
     evt.preventDefault();
     nameAuthor.innerHTML = nameInput.value;
     descriptionAuthor.innerHTML = descriptionInput.value;
+    openPopup.classList.remove('popup_opened');
+    openOverlay.classList.remove('overlay_opened');
 }
 
 OpeningClosing();
