@@ -1,6 +1,6 @@
-let nameInput = document.querySelector('.popup__form-name'); 
+let nameInput = document.querySelector('.popup__name'); 
 let nameAuthor = document.querySelector('.profile__author'); 
-let descriptionInput = document.querySelector('.popup__form-description'); 
+let descriptionInput = document.querySelector('.popup__description'); 
 let descriptionAuthor = document.querySelector('.profile__competention'); 
 let openPopup = document.querySelector('.popup'); 
 let buttonOpenedPop = document.querySelector('.profile__edit-button'); 
@@ -9,27 +9,27 @@ let formElement = document.querySelector('.popup__form');
 
 // let likeButton = document.querySelectorAll('.elements__like-button');
 
-function ExportValue() { 
+function exportValue() { 
     nameInput.value = nameAuthor.textContent; 
     descriptionInput.value = descriptionAuthor.textContent; 
     return nameInput, descriptionInput; 
 }
 
-function Opening() {
+function opening() {
     openPopup.classList.add('popup_opened'); 
 }
 
-function Closing() {
+function closing() {
     openPopup.classList.remove('popup_opened');
 }
 
-function OpeningClosing() { 
+function openingClosing() { 
     buttonOpenedPop.addEventListener('click', function () { 
-        Opening();
-        ExportValue(); 
+        opening();
+        exportValue(); 
     }) 
     buttonClosedPop.addEventListener('click', function () { 
-        Closing()
+        closing()
     }) 
 }
 
@@ -37,7 +37,7 @@ function handleFormSubmit(evt) {
     evt.preventDefault(); 
     nameAuthor.textContent = nameInput.value; 
     descriptionAuthor.textContent = descriptionInput.value; 
-    Closing()
+    closing()
 } 
 
 // function buttons() { 
@@ -48,5 +48,5 @@ function handleFormSubmit(evt) {
 //     ); 
 // }
 
-OpeningClosing();
+openingClosing();
 formElement.addEventListener('submit', handleFormSubmit); 
