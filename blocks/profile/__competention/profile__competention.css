@@ -9,7 +9,7 @@
     max-width: 336px;
     padding-top: 10px;
     text-overflow: ellipsis;
-    white-space: normal;
+    white-space: nowrap;
     overflow: hidden;
 }
 
@@ -17,6 +17,5 @@
     .profile__competention {
         font-size: 14px;
         line-height: 17px;
-        padding-top: 10px;
     }
 }

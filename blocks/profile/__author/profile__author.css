@@ -8,7 +8,7 @@
     line-height: 48px;
     max-width: 294px;
     text-overflow: ellipsis;
-    white-space: normal;
+    white-space: nowrap;
     overflow: hidden;
 }
 
