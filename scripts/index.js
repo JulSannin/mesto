@@ -2,7 +2,6 @@ const nameInput = document.querySelector('.popup__input_type_name');
 const nameAuthor = document.querySelector('.profile__author');
 const descriptionInput = document.querySelector('.popup__input_type_description');
 const descriptionAuthor = document.querySelector('.profile__competention');
-const openPopups = document.querySelectorAll('.popup');
 const buttonOpeningPopupEditProfile = document.querySelector('.profile__edit-button');
 const buttonOpeningPopupAddedCard = document.querySelector('.profile__add-button');
 const buttonsClosingPopups = document.querySelectorAll('.popup__button-closed');
@@ -13,7 +12,6 @@ const popupImgCardName = document.querySelector('.popup__img-card-name');
 const profilePopup = document.querySelector('.popup_editing-profile');
 const addCardPopup = document.querySelector('.popup_adding-card');
 const imagePopup = document.querySelector('.popup_image-card');
-
 
 function exportValue() {
     nameInput.value = nameAuthor.textContent;
@@ -26,6 +24,7 @@ function openPopup(e) {
     e.classList.add('popup_opened');
     document.addEventListener('keydown', closeOnKeyDown);
     addCardPopup.querySelector('.popup__form').reset();
+    exportValue();
 }
 
 //Функция закрытия Попапа клавишей ESC
@@ -63,7 +62,7 @@ const cardTemplate = document.querySelector("#card-template").content;
 // Переменная, куда будут карточки прогружаться
 const fieldCard = document.querySelector(".elements"); 
 
-// Функция, добавляющая карточку в elements
+// Функция, создающая версту карточки из данных
 function renderCard({ name, link }) {
     const placeElement = cardTemplate.querySelector(".elements__item").cloneNode(true);
     placeElement.querySelector('.elements__place-name').textContent = name;
@@ -95,22 +94,31 @@ function renderCard({ name, link }) {
         openPopup(imagePopup);
     })
 
-    return fieldCard.prepend(placeElement);
+    return placeElement;
 }
 
-// Функция создания карточек
+// Функция создания карточки
 function rendered() {
-    initialCards.forEach(renderCard);
+    initialCards.forEach(item => {
+        const card = renderCard(item);
+        addCard(card)
+    });
+
+}
+
+//Функция, добавляющая карточку в верстку
+function addCard(card) {
+    fieldCard.prepend(card);
 }
 
 //Функция обработчик формы добавления карточки
-function renderFormSubmit(enl) {
+function formAddingCard(enl) {
     enl.preventDefault();
     const newCard = {
         name: nameImg.value,
         link: linkImg.value
     }
-    renderCard(newCard);
+    addCard(renderCard(newCard));
     closePopup(enl);
     addCardPopup.querySelector('.popup__form').reset();
 }
@@ -118,4 +126,4 @@ function renderFormSubmit(enl) {
 rendered();
 // Слушатель событий форм
 profilePopup.addEventListener('submit', profileEditingHandler);
-addCardPopup.addEventListener('submit', renderFormSubmit);
+addCardPopup.addEventListener('submit', formAddingCard);
