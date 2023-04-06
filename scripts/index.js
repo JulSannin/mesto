@@ -25,12 +25,12 @@ function exportValue() {
 function openPopup(e) {
     e.classList.add('popup_opened');
     document.addEventListener('keydown', closeOnKeyDown);
+    addCardPopup.querySelector('.popup__form').reset();
 }
 
 //Функция закрытия Попапа клавишей ESC
 function closeOnKeyDown (e) {
     if (e.keyCode == 27) {
-        addCardPopup.querySelector('.popup__form').reset();        
         document.querySelector('.popup_opened').classList.remove('popup_opened');
     } 
 }
