@@ -10,9 +10,9 @@ const nameImg = document.querySelector('.popup__input_type_name-img');
 const linkImg = document.querySelector('.popup__input_type_link-img')
 const popupImgCard = document.querySelector('.popup__img-card');
 const popupImgCardName = document.querySelector('.popup__img-card-name');
-const profilePopup = document.querySelector('.popup__editing-profile');
-const addCardPopup = document.querySelector('.popup__adding-card');
-const imagePopup = document.querySelector('.popup__image-card');
+const profilePopup = document.querySelector('.popup_editing-profile');
+const addCardPopup = document.querySelector('.popup_adding-card');
+const imagePopup = document.querySelector('.popup_image-card');
 
 
 function exportValue() {
