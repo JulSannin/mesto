@@ -1,7 +1,7 @@
 .elements {
     display: grid;
     grid-template-columns: repeat(3, 282px);
-    grid-template-rows: repeat(2, 361px);
+    grid-template-rows: repeat(auto-fill, 361px);
     gap: 20px 17px;
     padding-top: 50px;
     justify-content: center;
@@ -10,7 +10,6 @@
 @media screen and (max-width: 1023px) {
     .elements {
         grid-template-columns: repeat(2, 282px);
-        grid-template-rows: repeat(3, 361px);
         column-gap: 18px;
         padding-top: 36px;
     }
@@ -19,6 +18,5 @@
 @media screen and (max-width: 767px) {
     .elements {
         grid-template-columns: repeat(1, 282px);
-        grid-template-rows: repeat(6, 361px);
     }
 }
