@@ -26,6 +26,7 @@ function openPopup(e) {
     e.classList.add('popup_opened');
     document.addEventListener('keydown', closeOnKeyDown);
     addCardPopup.querySelector('.popup__form').reset();
+    exportValue();
 }
 
 //Функция закрытия Попапа клавишей ESC
