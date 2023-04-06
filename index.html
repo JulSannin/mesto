@@ -31,29 +31,29 @@
         <footer class="footer">
             <p class="footer__text">© 2020 Mesto Russia</p>
         </footer>
-        <div class="popup">
+        <div class="popup popup__editing-profile" >
             <div class="popup__container">
                 <button class="popup__button-closed" type="button"></button>
                 <h3 class="popup__form-text">Редактировать профиль</h3>
-                <form class="popup__form" action="#" method="post" target="_blank" name="popup__form">
-                    <input class="popup__input popup__input_type_name" type="text" name="name" value="" required>
-                    <input class="popup__input popup__input_type_description" type="text" name="description" value="" required>
+                <form class="popup__form" action="#" method="post" name="popup__form">
+                    <input class="popup__input popup__input_type_name" type="text" name="name" value="" placeholder="Имя автора" required>
+                    <input class="popup__input popup__input_type_description" type="text" name="description" placeholder="Профессия автора" value="" required>
                     <button class="popup__button-saved" type="submit">Сохранить</button>
                 </form>
             </div>
         </div>
-        <div class="popup">
+        <div class="popup popup__adding-card">
             <div class="popup__container">
                 <button class="popup__button-closed" type="button"></button>
                 <h3 class="popup__form-text">Новое место</h3>
-                <form class="popup__form" action="#" method="post" target="_blank" name="popup__form">
+                <form class="popup__form" action="#" method="post" name="popup__form">
                     <input class="popup__input popup__input_type_name-img" type="text" name="name" value="" placeholder="Название" required>
                     <input class="popup__input popup__input_type_link-img" type="text" name="description" value="" placeholder="Ссылка на картинку" required>
                     <button class="popup__button-saved" type="submit">Сохранить</button>
                 </form>
             </div>
         </div>
-        <div class="popup">
+        <div class="popup popup__image-card">
             <div class="popup__container popup__img-container">
                 <button class="popup__button-closed" type="button"></button>
                 <img class="popup__img-card" src="#" title="#" alt="#">
@@ -64,13 +64,14 @@
     <template id="card-template">
         <div class="elements__item">
             <img class="elements__photo" src="#" title="#" alt="#">
-            <button class="elements__deleted-button"></button>
+            <button class="elements__deleted-button" type="button"></button>
             <div class="elements__card">
                 <h2 class="elements__place-name"></h2>
                 <button class="elements__like-button" type="button"></button>
             </div>
         </div>
     </template>
+    <script src="./scripts/cards.js"></script>
     <script src="./scripts/index.js"></script>
 </body>
 
