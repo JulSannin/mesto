@@ -110,8 +110,15 @@ function addingCard(evt) {
 rendered();
 
 //Открытие Попапа редактирования профиля и Попапа добавления карточки
-buttonOpeningPopupEditProfile.addEventListener('click', () => openPopup(profilePopup, document.addEventListener('keydown', closeOnKeyDown), exportValue()));
-buttonOpeningPopupAddedCard.addEventListener('click', () => openPopup(addCardPopup, document.addEventListener('keydown', closeOnKeyDown), addCardPopup.querySelector('.popup__form').reset()));
+buttonOpeningPopupEditProfile.addEventListener('click', () => {
+    openPopup(profilePopup);
+    exportValue(); 
+});
+buttonOpeningPopupAddedCard.addEventListener('click', () => {
+    openPopup(profilePopup);
+    addCardPopup.querySelector('.popup__form').reset()
+});
+document.addEventListener('keydown', closeOnKeyDown)
 
 // Слушатель событий форм
 profilePopup.querySelector('.popup__form').addEventListener('submit', editingProfile);
