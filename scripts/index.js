@@ -128,14 +128,25 @@ buttonsClosingPopups.forEach((evt) => {
 });
 
 // Функция замены имени и профессии автора при нажатии на submit
-function editingProfile(evt) {
+const editingProfile = (evt) => {
     evt.preventDefault();
     nameAuthor.textContent = nameInput.value;
     descriptionAuthor.textContent = descriptionInput.value;
     closePopup(evt);
 };
 
-function exportValue() {
+// Отправка формы submit на Enter
+const SendingFormToEnter = (form, action) => {
+    if(form.querySelector('.popup__button-saved').keyCode == 13){
+        form.addEventListener('submit', action);
+    }
+ };
+
+const disabledButton = (form) => {
+    form.querySelector('.popup__button-saved').classList.add('popup__button-saved_inactive');
+}
+
+const exportValue = () => {
     nameInput.value = nameAuthor.textContent;
     descriptionInput.value = descriptionAuthor.textContent;
 };
@@ -143,17 +154,23 @@ function exportValue() {
 //Открытие Попапа редактирования профиля
 buttonOpeningPopupEditProfile.addEventListener('click', () => {
     const profilePopup = document.querySelector('.popup_profile_editing-profile');
+    const profileForm = profilePopup.querySelector('.popup__form');
     openPopup(profilePopup);
     exportValue();
     // Слушатель событий формы
-    profilePopup.querySelector('.popup__form').addEventListener('submit', editingProfile);
+    SendingFormToEnter(profileForm, editingProfile)
+    profileForm.addEventListener('submit', editingProfile);
+    disabledButton(profileForm);
 });
 
 //Открытие попапа добавления карточки
 buttonOpeningPopupAddedCard.addEventListener('click', () => {
     const addCardPopup = document.querySelector('.popup_card_adding-card');
+    const addCardForm = addCardPopup.querySelector('.popup__form');
     openPopup(addCardPopup);
-    addCardPopup.querySelector('.popup__form').reset();
+    addCardForm.reset();
     // Слушатель событий формы
-    addCardPopup.querySelector('.popup__form').addEventListener('submit', addingCard);
+    SendingFormToEnter(addCardForm, addingCard)
+    addCardForm.addEventListener('submit', addingCard);
+    disabledButton(addCardForm);
 });
