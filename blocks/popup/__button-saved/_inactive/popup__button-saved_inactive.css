@@ -1,0 +1,4 @@
+.popup__button-saved_inactive {
+    pointer-events: none;
+    opacity: 0.2;
+}
