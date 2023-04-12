@@ -1,3 +1,12 @@
+const removingErrors = () => {
+    errorArray.forEach((errorClass) => {
+        errorClass.classList.remove('popup__error_active');
+    });
+    inputErrorArray.forEach((inputElement) => {
+        inputElement.classList.remove('popup__input_error');
+    });
+};
+
 const showInputError = (formElement, inputElement, errorMessage, { inputErrorClass, errorClass }) => {
     const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
     inputElement.classList.add(inputErrorClass);
@@ -82,4 +91,4 @@ enableValidation({
     inactiveButtonClass: 'popup__button-saved_inactive',
     inputErrorClass: 'popup__input_error',
     errorClass: 'popup__error_active'
-}); 
+});
