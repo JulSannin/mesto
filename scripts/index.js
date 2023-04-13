@@ -17,8 +17,6 @@ const buttonsClosingPopups = document.querySelectorAll('.popup__button-closed');
 const errorArray = document.querySelectorAll('.popup__error');
 const inputErrorArray = document.querySelectorAll('.popup__input');
 
-// const buttonSaved = document.querySelector('.popup__button-saved');
-
 // Функция, создающая версту карточки из данных
 const renderCard = ({ name, link }) => {
     // Клонирование карточки с template
@@ -86,29 +84,26 @@ const handleNewCardAdd = (evt) => {
 
 const initPopupListeners = () => {
     const popups = document.querySelectorAll('.popup');
-    
+    const profileForm = profilePopup.querySelector('.popup__form');
+    const addCardForm = addCardPopup.querySelector('.popup__form');
+
+    profileForm.addEventListener('submit', editingProfile);
+    addCardForm.addEventListener('submit', handleNewCardAdd);
+
     // Открытие Попапа редактирования профиля
     buttonOpeningPopupEditProfile.addEventListener('click', () => {
-        const profileForm = profilePopup.querySelector('.popup__form');
         openPopup(profilePopup);
         removingErrors();
         fillProfilePopupInputs();
-        // Слушатель событий формы
-        profileForm.addEventListener('submit', editingProfile);
         disabledButton(profileForm);
-        // disableSubmitButton(buttonSaved, 'popup__button-saved_inactive' ); не срабатывает
     });
 
     // Открытие попапа добавления карточки
     buttonOpeningPopupAddedCard.addEventListener('click', () => {
-        const addCardForm = addCardPopup.querySelector('.popup__form');
         openPopup(addCardPopup);
         removingErrors();
         addCardForm.reset();
-        // Слушатель событий формы
-        addCardForm.addEventListener('submit', handleNewCardAdd);
-        disabledButton(addCardForm)
-        // disableSubmitButton(buttonSaved, 'popup__button-saved_inactive' ); не срабатывает
+        disabledButton(addCardForm);
     });
 
     //Закрытие для всех Попапов
@@ -121,23 +116,26 @@ const initPopupListeners = () => {
                 closePopup(popup);
             }
         });
-        // на кнопку ESC
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                popup.classList.remove('popup_opened');
-            }
-        });
     });
 };
 
 // Функция для открытия Попапа
 const openPopup = (popup) => {
     popup.classList.add('popup_opened');
+    document.addEventListener('keydown', closeOnKeyDown);
 };
 
 // Функция для закрытия Попапа
 const closePopup = (popup) => {
     popup.classList.remove('popup_opened')
+    document.removeEventListener('keydown', closeOnKeyDown);
+};
+
+// Функция закрытия Попапа клавишей ESC 
+const closeOnKeyDown = (e) => {
+    if (e.key === "Escape") {
+        document.querySelector('.popup_opened').classList.remove('popup_opened');
+    }
 };
 
 const fillProfilePopupInputs = () => {
