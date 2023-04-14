@@ -134,7 +134,7 @@ const closePopup = (popup) => {
 // Функция закрытия Попапа клавишей ESC 
 const closeOnKeyDown = (e) => {
     if (e.key === "Escape") {
-        document.querySelector('.popup_opened').classList.remove('popup_opened');
+        closePopup(document.querySelector('.popup_opened'));
     }
 };
 
