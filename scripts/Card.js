@@ -1,12 +1,16 @@
-import { openPopup } from "./index.js";
 export default class Card {
-  constructor(data) {
+  constructor(data, cardSelector, handleCardClick) {
     this._nameImage = data.name;
     this._imageLink = data.link;
+    this._cardSelector = cardSelector;
+    this._handleCardClick = handleCardClick;
+    this._imagePopup = document.querySelector('.popup_card_opening-image');
+    this._popupImgCard = this._imagePopup.querySelector('.popup__img-card');
+    this._popupImgCardName = this._imagePopup.querySelector('.popup__img-card-name');
   }
 
   _getTemplate() {
-    this._cardTemplate = (document.querySelector('#card-template')).content.querySelector('.elements__item').cloneNode(true);
+    this._cardTemplate = document.querySelector(this._cardSelector).content.querySelector('.elements__item').cloneNode(true);
     return this._cardTemplate;
   }
 
@@ -19,7 +23,7 @@ export default class Card {
     this._cardElement.querySelector('.elements__place-name').textContent = this._nameImage;
 
     this._setEventListeners();
-    
+
     return this._cardElement;
   }
 
@@ -35,9 +39,10 @@ export default class Card {
       this._deleteCardclick(evt);
     })
 
-    this._cardsElementImage.addEventListener('click', (evt) => {
-      this._openPopupImage(evt);
-    })
+    this._cardsElementImage.addEventListener('click', () => {
+      this._handleCardClick(this._nameImage, this._imageLink)
+    });
+
   }
 
   _handleLikeCLick() {
@@ -45,16 +50,6 @@ export default class Card {
   }
 
   _deleteCardclick() {
-    this._deleteButton.closest('.elements__item').remove();
-  }
-
-  _openPopupImage() {
-    this._imagePopup = document.querySelector('.popup_card_opening-image');
-    this._popupImgCard = this._imagePopup.querySelector('.popup__img-card');
-    this._popupImgCardName = this._imagePopup.querySelector('.popup__img-card-name');
-    this._popupImgCard.src = this._imageLink;
-    this._popupImgCard.title = this._nameImage;
-    this._popupImgCardName.textContent = this._nameImage;
-    openPopup(this._imagePopup);
+    this._cardElement.remove();
   }
 }
