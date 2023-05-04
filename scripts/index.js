@@ -65,6 +65,7 @@ const initPopupListeners = () => {
     // Открытие Попапа редактирования профиля
     buttonOpeningPopupEditProfile.addEventListener('click', () => {
         openPopup(profilePopup);
+        profileForm.reset();
         profileFormValidation.resetValidation();
         fillProfilePopupInputs();
     });
@@ -72,8 +73,8 @@ const initPopupListeners = () => {
     // Открытие попапа добавления карточки
     buttonOpeningPopupAddedCard.addEventListener('click', () => {
         openPopup(addCardPopup);
-        addCardFormValidation.resetValidation();
         addCardForm.reset();
+        addCardFormValidation.resetValidation();
     });
 
     //Закрытие для всех Попапов
