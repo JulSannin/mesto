@@ -14,8 +14,6 @@ import {
     buttonOpeningPopupEditProfile,
     buttonOpeningPopupAddedCard,
     fieldCard,
-    nameImg,
-    linkImg,
     cardSelector
 } from '../utils/initialData.js';
 import Card from '../components/Card.js';
@@ -69,7 +67,7 @@ const popupNewCard = new PopupWithForm(
     addCardPopup, (data) => {
         cardList.addNewItem(createCard({ name: data.nameImg, link: data.linkImg }, cardSelector));
         popupNewCard.close();
-    });11
+    });
 
 const addCardFormValidation = new FormValidator(addCardForm, initialValidationSettings);
 popupNewCard.setEventListeners();

@@ -45,6 +45,4 @@ export const descriptionAuthor = document.querySelector('.profile__competention'
 export const buttonOpeningPopupEditProfile = document.querySelector('.profile__edit-button');
 export const buttonOpeningPopupAddedCard = document.querySelector('.profile__add-button');
 export const fieldCard = document.querySelector('.elements');
-export const nameImg = document.querySelector('.popup__input_type_name-img');
-export const linkImg = document.querySelector('.popup__input_type_link-img');
 export const cardSelector = '#card-template';
