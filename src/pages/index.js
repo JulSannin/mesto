@@ -47,11 +47,11 @@ cardList.renderItems(initialCards);
 const userInfo = new UserInfo(nameAuthor, descriptionAuthor);
 
 const popupProfile = new PopupWithForm(
-    profilePopup, () => {
-      userInfo.setUserInfo({ name: nameInput.value, description: descriptionInput.value });
-      popupProfile.close()
+    profilePopup, (data) => {
+        userInfo.setUserInfo({ name: data.name, description: data.description });
+        popupProfile.close();
     }
-  ); 
+);
 
 const profileFormValidation = new FormValidator(profileForm, initialValidationSettings);
 popupProfile.setEventListeners();
@@ -66,10 +66,10 @@ buttonOpeningPopupEditProfile.addEventListener('click', () => {
 });
 
 const popupNewCard = new PopupWithForm(
-    addCardPopup, () => {
-      cardList.addNewItem(createCard({name: nameImg.value, link: linkImg.value}, cardSelector));
-      popupNewCard.close();
-  }); 
+    addCardPopup, (data) => {
+        cardList.addNewItem(createCard({ name: data.nameImg, link: data.linkImg }, cardSelector));
+        popupNewCard.close();
+    });11
 
 const addCardFormValidation = new FormValidator(addCardForm, initialValidationSettings);
 popupNewCard.setEventListeners();

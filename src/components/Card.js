@@ -23,7 +23,6 @@ export default class Card {
     this._cardElement.querySelector('.elements__place-name').textContent = this._nameImage;
 
     this._setEventListeners();
-
     return this._cardElement;
   };
 
@@ -47,6 +46,7 @@ export default class Card {
   };
 
   _deleteCardclick() {
+    this._cardElement.remove();
     this._cardElement = null;
   };
 };
