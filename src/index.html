@@ -4,19 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pages/index.css">
-    <script defer type="module" src="./scripts/index.js"></script>
     <title>Mesto</title>
 </head>
 
 <body>
     <div class="page">
         <header class="header">
-            <img class="header__logo" src="./images/__logo.svg" title="Логотип" alt="Логотип">
+            <img class="header__logo" src="<%=require('./images/__logo.svg')%>" title="Логотип" alt="Логотип">
         </header>
         <main class="content">
             <section class="profile">
-                <img class="profile__avatar" src="./images/__avatar.png" title="Фото профиля" alt="Фото профиля">
+                <img class="profile__avatar" src="<%=require('./images/__avatar.png')%>" title="Фото профиля" alt="Фото профиля">
                 <div class="profile__info">
                     <div class="profile__description">
                         <h1 class="profile__author">Жак-Ив Кусто</h1>
@@ -41,7 +39,7 @@
                     <span id="popup__input-name-error" class="popup__error"></span>
                     <input id="popup__input-description" class="popup__input popup__input_type_description" type="text" name="description" placeholder="Профессия автора" value="" minlength="2" maxlength="200" required>
                     <span id="popup__input-description-error" class="popup__error"></span>
-                    <button class="popup__submit popup__button-saved" type="submit" disabled>Сохранить</button>
+                    <button class="popup__button-saved" type="submit" disabled>Сохранить</button>
                 </form>
             </div>
         </div>
@@ -54,7 +52,7 @@
                     <span id="popup__input-name-img-error" class="popup__error"></span>
                     <input id="popup__input-link-img" class="popup__input popup__input_type_link-img" type="url" name="link-img" value="" placeholder="Ссылка на картинку" required>
                     <span id="popup__input-link-img-error" class="popup__error"></span>
-                    <button class="popup__submit popup__button-saved" type="submit">Создать</button>
+                    <button class="popup__button-saved" type="submit">Создать</button>
                 </form>
             </div>
         </div>

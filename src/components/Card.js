@@ -7,12 +7,12 @@ export default class Card {
     this._imagePopup = document.querySelector('.popup_card_opening-image');
     this._popupImgCard = this._imagePopup.querySelector('.popup__img-card');
     this._popupImgCardName = this._imagePopup.querySelector('.popup__img-card-name');
-  }
+  };
 
   _getTemplate() {
     this._cardTemplate = document.querySelector(this._cardSelector).content.querySelector('.elements__item').cloneNode(true);
     return this._cardTemplate;
-  }
+  };
 
   generateCard() {
     this._cardElement = this._getTemplate();
@@ -25,7 +25,7 @@ export default class Card {
     this._setEventListeners();
 
     return this._cardElement;
-  }
+  };
 
   _setEventListeners() {
     this._likeButton = this._cardElement.querySelector('.elements__like-button');
@@ -39,17 +39,14 @@ export default class Card {
       this._deleteCardclick(evt);
     })
 
-    this._cardsElementImage.addEventListener('click', () => {
-      this._handleCardClick(this._nameImage, this._imageLink)
-    });
-
-  }
+    this._cardsElementImage.addEventListener('click', () => this._handleCardClick());
+  };
 
   _handleLikeCLick() {
     this._likeButton.classList.toggle('elements__like-button_active');
-  }
+  };
 
   _deleteCardclick() {
     this._cardElement.remove();
-  }
-}
+  };
+};
