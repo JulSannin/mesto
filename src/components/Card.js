@@ -47,6 +47,6 @@ export default class Card {
   };
 
   _deleteCardclick() {
-    this._cardElement.remove();
+    this._cardElement = null;
   };
 };

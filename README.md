@@ -24,8 +24,6 @@
 ## Используемые технологии:
 - Microsoft Visual Studio Code;
 - Git;
-- Node.Js;
-- webpack;
 - HTML5;
 - CSS3:
   - Flexbox;
@@ -33,8 +31,10 @@
   - Positioning;
 - Методология БЭМ;
 - Файловая структура Nested БЭМ;
-- JavaScript
-- ООП JS
+- JavaScript;
+- ООП JS;
+- Node.Js;
+- webpack;
 
 ## Figma
 * [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
