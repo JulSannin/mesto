@@ -41,7 +41,7 @@ export default class Api {
             method: 'PATCH',
             headers: this._headers,
             body: JSON.stringify({
-                avatar: data.linkImg,
+                avatar: data.linkAvatar,
             })
         })
             .then(this._checkError)
