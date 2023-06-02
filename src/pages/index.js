@@ -77,17 +77,17 @@ function createCard(data, cardSelector) {
         },
         handleRemoveClick: (evt) => {
             const cardElement = evt.target.closest('.elements__item')
-            popupDeletingCard.open(()  => {
+            popupDeletingCard.open(() => {
                 api.deleteCard(card.getCardId())
-                .then(() => {
-                    cardElement.remove()
-                    popupDeletingCard.close()
-                })
-                .catch((err) => {
-                    console.error(err)
-                })
+                    .then(() => {
+                        cardElement.remove()
+                        popupDeletingCard.close()
+                    })
+                    .catch((err) => {
+                        console.error(err)
+                    })
             })
-            }
+        }
     }
     );
     return card.generateCard();
@@ -179,10 +179,14 @@ buttonOpeningPopupAddedCard.addEventListener('click', () => {
     popupNewCard.open();
 });
 
-api.getAppInfo().then((result) => {
-    const [cardData, userData] = result;
-    userInfo.setUserInfo({ name: userData.name, description: userData.about })
-    userInfo.setUserAvatar({ avatarLink: userData.avatar })
-    userInfo.saveUserId(userData._id)
-    cardList.renderItems(cardData)
-})
+api.getAppInfo()
+    .then((result) => {
+        const [cardData, userData] = result;
+        userInfo.setUserInfo({ name: userData.name, description: userData.about })
+        userInfo.setUserAvatar({ avatarLink: userData.avatar })
+        userInfo.saveUserId(userData._id)
+        cardList.renderItems(cardData)
+    })
+    .catch((err) => {
+        console.error(err)
+    })
