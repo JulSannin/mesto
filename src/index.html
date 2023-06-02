@@ -10,11 +10,16 @@
 <body>
     <div class="page">
         <header class="header">
-            <img class="header__logo" src="<%=require('./images/__logo.svg')%>" title="Логотип" alt="Логотип">
+            <img class="header__logo" src="<%=require('./images/logo.svg')%>" title="Логотип" alt="Логотип">
         </header>
         <main class="content">
             <section class="profile">
-                <img class="profile__avatar" src="<%=require('./images/__avatar.png')%>" title="Фото профиля" alt="Фото профиля">
+                <div class="profile__avatar">
+                    <img class="profile__avatar-image" src="<%=require('./images/avatar.png')%>" title="Фото профиля" alt="Фото профиля">
+                    <button class="profile__avatar-edit-button" type="button" title="Обновить аватар" aria-label="Open popup editing-img-profile">
+                        <svg class="profile__avatar-edit-icon"></svg>
+                    </button>
+                </div>
                 <div class="profile__info">
                     <div class="profile__description">
                         <h1 class="profile__author">Жак-Ив Кусто</h1>
@@ -63,6 +68,26 @@
                 <h3 class="popup__img-card-name"></h3>
             </div>
         </div>
+        <div class="popup popup_card_deleting-image">
+            <div class="popup__container popup__deleting-container">
+                <button class="popup__button-closed" type="button" aria-label="Close"></button>
+                <h3 class="popup__form-text">Вы уверены?</h3>
+                <form class="popup__form popup__form_deleting-card" name="popup__form_deleting-card">
+                    <button class="popup__button-saved" type="button">Да</button>
+                </form>
+            </div>
+        </div>
+        <div class="popup popup_profile_editing-avatar">
+            <div class="popup__container popup__editing-container">
+                <button class="popup__button-closed" type="button" aria-label="Close"></button>
+                <h3 class="popup__form-text">Обновить аватар</h3>
+                <form class="popup__form" name="popup__form_editing-avatar">
+                    <input id="popup__input-link-img" class="popup__input popup__input_type_link-img" type="url" name="linkImg" value="" placeholder="Ссылка на картинку" required>
+                    <span id="popup__input-link-img-error" class="popup__error"></span>
+                    <button class="popup__button-saved" type="submit">Сохранить</button>
+                </form>
+            </div>
+        </div>
     </div>
     <template id="card-template">
         <div class="elements__item">
@@ -70,7 +95,10 @@
             <button class="elements__deleted-button" type="button" aria-label="Delete card"></button>
             <div class="elements__card">
                 <h2 class="elements__place-name"></h2>
-                <button class="elements__like-button" type="button" aria-label="Like"></button>
+                <div class="element__like-container">
+                    <button class="elements__like-button" type="button" aria-label="Like"></button>
+                    <p class="elements__like-counter">0</p>
+                </div>
             </div>
         </div>
     </template>

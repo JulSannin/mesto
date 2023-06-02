@@ -1,7 +1,7 @@
 .profile__add-button {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0);
-    background-image: url("../../../images/__add-button.svg");
+    background-image: url("../../../images/add-button.svg");
     border-radius: 2px;
     padding: 0;
     border: 0;
@@ -20,6 +20,6 @@
     .profile__add-button {
         margin-top: 32px;
         width: 282px;
-        background-image: url("../../../images/__add-button-mobile.svg");
+        background-image: url("../../../images/add-button-mobile.svg");
     }
 }
